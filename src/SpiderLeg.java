@@ -19,10 +19,8 @@ public class SpiderLeg {
 	 */
 	public void crawl(String Url){	
 		try {
-			System.setProperty("http.proxyHost", "proxy.mlp.com");
+			System.setProperty("http.proxyHost", "nybcproxy3.mlp.com");
 			System.setProperty("http.proxyPort", "3128");
-			System.setProperty("https.proxyHost", "proxy.mlp.com");
-			System.setProperty("https.proxyPort", "3128");
 			Connection connection = Jsoup.connect(Url).userAgent(USER_AGENT);
 			Document htmlDocument = connection.get();
 			

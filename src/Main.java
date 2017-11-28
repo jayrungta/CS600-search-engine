@@ -2,11 +2,11 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
-public class WebCrawler {
+public class Main {
 
 	public static void main(String[] args) {
 		
-		String url = "http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-java/";
+		String url = "http://www.nydailynews.com/news/politics/majority-n-y-voters-support-legalizing-taxing-pot-poll-article-1.3660456";
 		Spider spider = new Spider();
 		spider.search(url);	
 		
