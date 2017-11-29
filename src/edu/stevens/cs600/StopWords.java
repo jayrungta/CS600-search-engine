@@ -1,3 +1,5 @@
+package edu.stevens.cs600;
+
 public class StopWords {
 	public static String[] articles = {"the", "a", "an"};
 	public static String[] pronouns = {"i", "you", "he", "she", "it" , "they", "we", "me", "him", "her", "them", "us"};

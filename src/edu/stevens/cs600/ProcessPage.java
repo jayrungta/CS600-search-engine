@@ -1,3 +1,5 @@
+package edu.stevens.cs600;
+
 public class ProcessPage {
 	public static Trie trie = new Trie('#');
 
