@@ -1,3 +1,6 @@
+/*
+ * Author: @jayrungta
+ */
 package edu.stevens.cs600;
 
 import java.net.URL;
@@ -53,7 +56,7 @@ public class Main {
 			if (search_string.equals("exit") || search_string.equals("quit")) {
 				break;
 			}
-			Set<String> urls = CrawlerHelper.searchForWord(search_string);
+			Set<String> urls = CrawlHelper.searchForWord(search_string);
 			if (urls.size() == 0) {
 				System.out.println("No search results found.");
 			} else {

@@ -1,3 +1,6 @@
+/*
+ * Author: @jayrungta
+ */
 package edu.stevens.cs600;
 import java.util.ArrayList;
 import java.util.HashSet;

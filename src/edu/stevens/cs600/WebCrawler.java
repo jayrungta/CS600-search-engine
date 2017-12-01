@@ -1,3 +1,6 @@
+/*
+ * Author: @jayrungta
+ */
 package edu.stevens.cs600;
 
 import java.util.HashSet;
@@ -17,7 +20,7 @@ public class WebCrawler {
 	public void startCrawling(String url) {
 		while(this.visitedList.size()< pagesToCrawl){
 			String currentUrl;
-			CrawlerHelper helper = new CrawlerHelper();
+			CrawlHelper helper = new CrawlHelper();
 			
 			if(this.pageList.isEmpty()){
 				currentUrl = url;

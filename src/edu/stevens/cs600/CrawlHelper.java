@@ -1,3 +1,6 @@
+/*
+ * Author: @jayrungta
+ */
 package edu.stevens.cs600;
 
 import java.io.IOException;
@@ -12,7 +15,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class CrawlerHelper {
+public class CrawlHelper {
 	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112	Safari/535.1";
 	private List<String> links = new LinkedList<String>();
 
@@ -23,11 +26,13 @@ public class CrawlerHelper {
 		try {
 			System.setProperty("http.proxyHost", "nybcproxy3.mlp.com");
 			System.setProperty("http.proxyPort", "3128");
+			System.setProperty("https.proxyHost", "nybcproxy3.mlp.com");
+			System.setProperty("https.proxyPort", "3128");
 			Connection connection = Jsoup.connect(Url).userAgent(USER_AGENT);
 			Document htmlDocument = connection.get();
 
 			String page = htmlDocument.text();
-			ProcessPage p = new ProcessPage();
+			ProcessWords p = new ProcessWords();
 			p.addPageWithUrl(page, Url);
 
 			Elements linksOnPage = htmlDocument.select("a[href]");
@@ -59,7 +64,7 @@ public class CrawlerHelper {
 	public static Set<String> searchWord(String searchWord) {
 		System.out.println("Searching for \"" + searchWord + "\"...");
 		char[] words = searchWord.toCharArray();
-		Trie root = ProcessPage.trie;
+		Trie root = ProcessWords.trie;
 		for (int i = 0; i < words.length; i++) {
 			root = root.getChild(words[i]);
 			if (root == null)
